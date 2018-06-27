@@ -25,8 +25,26 @@ function addTask () {
     if (inputTask.value) {
         var listItem = createNewElement(inputTask.value);
         unfinishedTasks.appendChild(listItem);
+        bindTaskEvents(listItem, finishedTask);
         inputTask.value="";
         
     }
 }
 addButton.onclick=addTask;
+
+function deleteTask () {
+    var listItem = this.parentNode;
+    var ul = listItem.parentNode;
+    ul.removeChild(listItem);
+}
+
+function finishedTask () {
+}
+
+function bindTaskEvents (listItem, buttonEvent) {
+    var finishedButton = listItem.querySelector('button.finished');
+    var deletedButton = listItem.querySelector('button.delete');
+
+    finishedButton.onclick = buttonEvent;
+    deletedButton.onclick = deleteTask;
+}
