@@ -4,29 +4,29 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<link rel="stylesheet" href="style.css">
-	<script src="js.js"></script>
 </head>
 <body>
 	<div id="root">
 		<h2>Добавить дело</h2>
-			<input id="new task" type="text">
+			<input id="new-task" type="text">
 			<button id="add">Add</button>
 			<h2>Список дел</h2>
-				<ul >
+				<ul id="unfinished-tasks">
 					<li>
 						<label>123</label>
-						<button>Выполнить</button>
-						<button>Удалить</button>
+						<button class="finished">Выполнить</button>
+						<button class="delete">Удалить</button>
 					</li>
 				</ul>
 			<h2>Завершенные дела</h2>
-				<ul >
+				<ul id="finished-tasks">
 					<li>
 						<label>123</label>
-						<button>Выполнить</button>
-						<button>Удалить</button>
+						<button class="unfinished">Выполнить</button>
+						<button class="delete">Удалить</button>
 					</li>
 				</ul>
-	</div>	
+	</div>
+<script src="js.js"></script>	
 </body>
 </html> 
