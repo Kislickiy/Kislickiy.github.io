@@ -39,6 +39,17 @@ function deleteTask () {
 }
 
 function finishedTask () {
+    var listItem = this.parentNode;
+    var finishedButton = listItem.querySelector('button.finished');
+    finishedButton.className="unfinished";
+    finishedButton.innerHTML="<span class='text-button'>Вернуть в список</span>"
+    finishedTasks.appendChild(listItem);
+    bindTaskEvents (listItem,unfinishTask);
+
+}
+
+function unfinishTask () {
+
 }
 
 function bindTaskEvents (listItem, buttonEvent) {
