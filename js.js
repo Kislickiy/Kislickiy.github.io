@@ -41,6 +41,7 @@ function deleteTask () {
 function finishedTask () {
     var listItem = this.parentNode;
     var finishedButton = listItem.querySelector('button.finished');
+    finishedButton.className="finished";
     finishedButton.innerHTML="<span class='text-button'>Вернуть в список</span>"
     finishedTasks.appendChild(listItem);
     bindTaskEvents (listItem,unfinishTask);
@@ -50,6 +51,7 @@ function finishedTask () {
 function unfinishTask () {
     var listItem = this.parentNode;
     var finishedButton = listItem.querySelector('button.finished');
+    finishedButton.className="finished";
     finishedButton.innerHTML="<span class='text-button'>Выполнить</span>"
     unfinishedTasks.appendChild(listItem);
     bindTaskEvents (listItem,finishedTask);
